@@ -1,0 +1,30 @@
+@import (reference) '../../../app/css/variables.less';
+@import (reference) '../../../app/css/mixins.less';
+
+.checkmarx-view {
+  .project-name {
+    font-size: 24px;
+  }
+  .total-issues {
+    font-size: 18px;
+  }
+  .summary-count {
+    border-bottom: 2px solid @dash-divider;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .summary-type {
+    .text-standard;
+    text-align: center;
+  }
+  .number_low {
+    color: @dash-status-pass;
+  }
+  .number_medium {
+    color: @dash-status-warn;
+  }
+  .number_high {
+    color: @dash-status-fail;
+  }
+}
