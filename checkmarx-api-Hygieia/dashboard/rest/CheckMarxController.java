@@ -5,7 +5,7 @@ import com.capitalone.dashboard.model.CheckMarx;
 import com.capitalone.dashboard.model.CheckMarxType;
 import com.capitalone.dashboard.model.DataResponse;
 import com.capitalone.dashboard.request.CheckMarxRequest;
-import com.capitalone.dashboard.service.CheckMarxService;
+import com.capitalone.dashboard.service.CheckMarxServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -20,11 +20,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @RestController
 public class CheckMarxController
 {
-    private final CheckMarxService codeSecurityService;
+    private final CheckMarxServiceImpl checkMarxService;
 
     @Autowired
-    public CheckMarxController(CheckMarxService codeSecurityService) {
-        this.codeSecurityService = codeSecurityService;
+    public CheckMarxController(CheckMarxServiceImpl checkMarxService) {
+        this.checkMarxService = checkMarxService;
     }
 
     @InitBinder
@@ -35,6 +35,6 @@ public class CheckMarxController
     @RequestMapping(value = "/checkmarx", method = GET, produces = APPLICATION_JSON_VALUE)
     public DataResponse<Iterable<CheckMarx>> checkMarxData(@Valid CheckMarxRequest request) {
         request.setType(CheckMarxType.CheckMarx);
-        return codeSecurityService.search(request);
+        return checkMarxService.search(request);
     }
 }

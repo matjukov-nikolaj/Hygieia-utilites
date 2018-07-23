@@ -1,30 +1,15 @@
 package com.capitalone.dashboard.model;
 
-
-import com.capitalone.dashboard.model.BaseModel;
 import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Map;
-
-@Document(collection="checkmarx")
-public class CheckMarx extends BaseModel {
+public abstract class CodeSecurity<T> extends BaseModel {
     private ObjectId collectorItemId;
     private long timestamp;
 
     private String projectName;
-    private String version;
     private String url;
-    private Map<String, Integer> metrics;
+    private T type;
     private ObjectId buildId;
-
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
 
     public String getUrl() {
         return url;
@@ -50,6 +35,14 @@ public class CheckMarx extends BaseModel {
         this.timestamp = timestamp;
     }
 
+    public T getType() {
+        return type;
+    }
+
+    public void setType(T type) {
+        this.type = type;
+    }
+
     public ObjectId getCollectorItemId() {
         return collectorItemId;
     }
@@ -64,13 +57,5 @@ public class CheckMarx extends BaseModel {
 
     public void setBuildId(ObjectId buildId) {
         this.buildId = buildId;
-    }
-
-    public Map<String, Integer> getMetrics() {
-        return metrics;
-    }
-
-    public void setMetrics(Map<String, Integer> metrics) {
-        this.metrics = metrics;
     }
 }

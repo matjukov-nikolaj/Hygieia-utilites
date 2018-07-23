@@ -1,0 +1,36 @@
+<widget-modal widget-modal-title="Configure BlackDuck Widget" class="ca-config">
+    <form name="configForm" role="form"
+          ng-submit="blackDuckWidget.submit(blackDuckWidget.blackDuckCollectorItem)"
+          novalidate="novalidate">
+
+        <div class="box">
+
+            <form-group input="bdCollectorItem" class="text-center">
+
+                <div class="text-center modal-label">License validation from BlackDuck: </div>
+
+                <input type="text" name="blackDuckCollectorItem" class="form-control" placeholder="Search a BlackDuck Job"
+                       ng-model="blackDuckWidget.blackDuckCollectorItem"
+                       uib-typeahead="item as item.description for item in getBlackDuckCollectors($viewValue)" typeahead-focus
+                       typeahead-template-url="blackDuckProjectUrlTemplate.html"
+                       typeahead-wait-ms="250" autocomplete="off"
+                       typeahead-min-length="0"
+                       typeahead-no-results="noResults"
+
+                       required>
+                <div class="form-control" ng-show="noResults">
+                    No Results Found
+                </div>
+                <div class="form group text-center">
+                    <label></label>
+                    <button type="submit" class="btn btn-primary btn-wide">Save</button>
+                </div>
+            </form-group>
+        </div>
+    </form>
+</widget-modal>
+<script type="text/ng-template" id="blackDuckProjectUrlTemplate.html">
+    <a title={{match.model.options.instanceUrl}}>
+        <span ng-bind-html="match.label | uibTypeaheadHighlight:query"/>
+    </a>
+</script>

@@ -1,0 +1,33 @@
+<div class="blackduck_view">
+    <!-- Scrum Widget -->
+    <div class="widget">
+        <div class="widget-body">
+            <div class="col-xs-9.5 text-standard-sm dash-overflow project_name">
+                Project: <em>{{blackDuckWidget.projectName}}</em>
+            </div>
+        </div>
+
+        <div class="widget-body" fit-text=".build-summary-count > span" fit-text-max="40">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="summary_count number_files lol">
+                            <span>{{blackDuckWidget.metrics["Number of Files:"]}}</span>
+                    </div>
+                    <div class="summary_type">Number of files</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="summary_count number_files">
+                        <span>{{blackDuckWidget.metrics["Files Pending Identification:"]}}</span>
+                    </div>
+                    <div class="summary_type">Files Pending Identification</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="summary_count number_violations">
+                        <span>{{blackDuckWidget.metrics["Files with Violations:"]}}</span>
+                    </div>
+                    <div class="summary_type">Files with Violations</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
