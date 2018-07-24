@@ -1,0 +1,39 @@
+<div class="appscan-view">
+    <!-- Scrum Widget -->
+    <div class="widget">
+        <div class="widget-body">
+            <div class="col-xs-9.5 text-standard-sm dash-overflow project-name">
+                Project: <em>{{appScanWidget.projectName}}</em>
+            </div>
+            <div class="col-xs-9.5 text-standard-sm dash-overflow total-issues">
+                Total issues: <em>{{ appScanWidget.metrics["Total"] }}</em>
+            </div>
+            <div class="col-xs-9.5 text-standard-sm dash-overflow total-issues">
+                Total informational issues: <em>{{ appScanWidget.metrics["TotalInformationalIssues"] }}</em>
+            </div>
+        </div>
+
+        <div class="widget-body" fit-text=".build-summary-count > span" fit-text-max="40">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="summary-count number_low">
+                        <span>{{appScanWidget.metrics["TotalLowSeverityIssues"]}}</span>
+                    </div>
+                    <div class="summary-type">Low</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="summary-count number_medium">
+                        <span>{{appScanWidget.metrics["TotalMediumSeverityIssues"]}}</span>
+                    </div>
+                    <div class="summary-type">Medium</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="summary-count number_high">
+                        <span>{{appScanWidget.metrics["TotalHighSeverityIssues"]}}</span>
+                    </div>
+                    <div class="summary-type">High</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

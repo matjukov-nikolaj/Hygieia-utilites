@@ -9,11 +9,11 @@
     function CheckMarxViewController($scope, checkMarxData, $q) {
         let ctrl = this;
         ctrl.load = function () {
-            let csRequest = {
+            let cmRequest = {
                 id: $scope.widgetConfig.componentId,
             };
             return $q.all([
-                checkMarxData.checkMarxDetails(csRequest).then(processCheckMarxResponse)
+                checkMarxData.checkMarxDetails(cmRequest).then(processCheckMarxResponse)
             ])
         };
 

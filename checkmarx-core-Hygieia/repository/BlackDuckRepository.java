@@ -1,10 +1,10 @@
 package com.capitalone.dashboard.repository;
 
-        import com.capitalone.dashboard.model.BlackDuck;
+import com.capitalone.dashboard.model.BlackDuck;
 
-        import org.bson.types.ObjectId;
-        import org.springframework.data.querydsl.QueryDslPredicateExecutor;
-        import org.springframework.data.repository.CrudRepository;
+import org.bson.types.ObjectId;
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * Repository for {@link BlackDuck} data.

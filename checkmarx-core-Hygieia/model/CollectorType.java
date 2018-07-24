@@ -27,7 +27,6 @@ public enum CollectorType {
     AppPerformance,
     InfraPerformance,
 	CheckMarx,
-    CodeSecurity,
     BlackDuck,
     AppScan,
     Score;
