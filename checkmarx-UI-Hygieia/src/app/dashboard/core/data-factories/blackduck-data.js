@@ -1,6 +1,3 @@
-/**
- * Gets code security related data
- */
 (function () {
     'use strict';
 
