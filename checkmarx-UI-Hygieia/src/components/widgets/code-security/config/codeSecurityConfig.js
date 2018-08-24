@@ -1,0 +1,17 @@
+const codeSecurityConfig = {
+    LOW: "Low",
+    MEDIUM: "Medium",
+    HIGH: "High",
+    EMPTY_URL: "javascript:void(0)",
+    BLOCK: "block",
+    NONE: "none",
+    INLINE_BLOCK: "inline-block",
+    VALUES_DOWN: "ValuesDown",
+    VALUES_UP: "ValuesUp",
+    VALUES_BLOCK: "ValuesBlock",
+    GREEN_COLOR: "#5cb85c",
+    RED_COLOR: "#d9534f",
+    YELLOW_COLOR: "#ffff00",
+    CHECK_MARX: "checkMarx",
+    DIFFERENCE: "difference",
+};

@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -18,24 +18,33 @@
         ctrl.csLoading = true;
         ctrl.submit = submitForm;
 
-        $scope.getCheckMarxCollectors = function(filter){
-            return collectorData.itemsByType('CheckMarx', {"search": filter, "size": 20}).then(function (response){
-                return response;
+        $scope.getCheckMarxCollectors = function (filter) {
+            return collectorData.itemsByType('CheckMarx', {"search": filter, "size": 20}).then(function (response) {
+                return getProjectWithTheCurrentProjectField(response);
             });
         };
 
         loadSavedCheckMarxJob();
         collectorData.itemsByType('CheckMarx').then(processCheckMarxResponse);
-        function loadSavedCheckMarxJob(){
+
+        function loadSavedCheckMarxJob() {
             let checkMarxCollectorItems = component.collectorItems.CheckMarx;
             const savedCheckMarxJob = checkMarxCollectorItems ? checkMarxCollectorItems[0].description : null;
-            if(savedCheckMarxJob){
-                $scope.getCheckMarxCollectors(savedCheckMarxJob).then(getCheckMarxCollectorsCallback) ;
+            if (savedCheckMarxJob) {
+                $scope.getCheckMarxCollectors(savedCheckMarxJob).then(getCheckMarxCollectorsCallback);
             }
         }
 
         function getCheckMarxCollectorsCallback(data) {
             ctrl.checkMarxCollectorItem = data[0];
+        }
+
+        function getProjectWithTheCurrentProjectField(response) {
+            let projects = response;
+            for (let i = 0; i < projects.length; ++i) {
+                projects[i].options.current = projects[i].options.current ? "(Current)" : "";
+            }
+            return projects;
         }
 
         function processCheckMarxResponse(data) {
@@ -61,5 +70,6 @@
             // pass this new config to the modal closing so it's saved
             $uibModalInstance.close(postObj);
         }
+
     }
 })();
