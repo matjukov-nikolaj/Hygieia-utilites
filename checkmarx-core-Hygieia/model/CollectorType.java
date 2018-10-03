@@ -26,9 +26,9 @@ public enum CollectorType {
     Product,
     AppPerformance,
     InfraPerformance,
+	AppScan,
 	CheckMarx,
-    BlackDuck,
-    AppScan,
+	BlackDuck,
     Score;
 
     public static CollectorType fromString(String value) {

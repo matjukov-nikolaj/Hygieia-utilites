@@ -10,7 +10,7 @@ public class AppScan extends BaseModel {
     private ObjectId collectorItemId;
     private long timestamp;
 
-    private Map<String, String> metrics;
+    private Map<String, Integer> metrics;
     private String projectName;
     private String url;
     private ObjectId buildId;
@@ -54,11 +54,11 @@ public class AppScan extends BaseModel {
     public void setBuildId(ObjectId buildId) {
         this.buildId = buildId;
     }
-    public Map<String, String> getMetrics() {
+    public Map<String, Integer> getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(Map<String, String> metrics) {
+    public void setMetrics(Map<String, Integer> metrics) {
         this.metrics = metrics;
     }
 

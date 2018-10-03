@@ -13,7 +13,9 @@ public class BlackDuck extends BaseModel {
     private String projectName;
     private String url;
     private ObjectId buildId;
-    private Map<String, String> metrics;
+    private Map<String, Integer> metrics;
+
+    private Map<String, Double> percentages;
 
     public String getUrl() {
         return url;
@@ -55,12 +57,20 @@ public class BlackDuck extends BaseModel {
         this.buildId = buildId;
     }
 
-    public Map<String, String> getMetrics() {
+    public Map<String, Integer> getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(Map<String, String> metrics) {
+    public void setMetrics(Map<String, Integer> metrics) {
         this.metrics = metrics;
+    }
+
+    public Map<String, Double> getPercentages() {
+        return percentages;
+    }
+
+    public void setPercentages(Map<String, Double> percentages) {
+        this.percentages = percentages;
     }
 
 }

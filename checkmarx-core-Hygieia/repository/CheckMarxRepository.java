@@ -6,6 +6,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 /**
  * Repository for {@link CheckMarx} data.
  */
@@ -20,4 +22,16 @@ public interface CheckMarxRepository extends CrudRepository<CheckMarx, ObjectId>
      * @return a {@link CheckMarx}
      */
     CheckMarx findByCollectorItemIdAndTimestamp(ObjectId collectorItemId, long timestamp);
+
+
+    /**
+     * Finds the {@link List<CheckMarx>}
+     * {@link com.capitalone.dashboard.model.CollectorItem}.
+     *
+     * @param projectName project name
+     *
+     * @return a {@link List<CheckMarx>}
+     */
+    List<CheckMarx> findByProjectName(String projectName);
+
 }

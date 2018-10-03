@@ -1,6 +1,5 @@
 package com.capitalone.dashboard.rest;
 
-import com.capitalone.dashboard.editors.CaseInsensitiveAppScanTypeEditor;
 import com.capitalone.dashboard.model.AppScan;
 import com.capitalone.dashboard.model.AppScanType;
 import com.capitalone.dashboard.model.DataResponse;
@@ -25,11 +24,6 @@ public class AppScanController
     @Autowired
     public AppScanController(AppScanServiceImpl appScanService) {
         this.appScanService = appScanService;
-    }
-
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        binder.registerCustomEditor(AppScanType.class, new CaseInsensitiveAppScanTypeEditor());
     }
 
     @RequestMapping(value = "/appscan", method = GET, produces = APPLICATION_JSON_VALUE)

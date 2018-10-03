@@ -1,6 +1,5 @@
 package com.capitalone.dashboard.rest;
 
-import com.capitalone.dashboard.editors.CaseInsensitiveBlackDuckTypeEditor;
 import com.capitalone.dashboard.model.BlackDuck;
 import com.capitalone.dashboard.model.BlackDuckType;
 import com.capitalone.dashboard.model.DataResponse;
@@ -25,11 +24,6 @@ public class BlackDuckController
     @Autowired
     public BlackDuckController(BlackDuckServiceImpl blackDuckService) {
         this.blackDuckService = blackDuckService;
-    }
-
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        binder.registerCustomEditor(BlackDuckType.class, new CaseInsensitiveBlackDuckTypeEditor());
     }
 
     @RequestMapping(value = "/blackduck", method = GET, produces = APPLICATION_JSON_VALUE)

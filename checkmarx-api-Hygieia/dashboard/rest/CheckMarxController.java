@@ -1,6 +1,5 @@
 package com.capitalone.dashboard.rest;
 
-import com.capitalone.dashboard.editors.CaseInsensitiveCheckMarxTypeEditor;
 import com.capitalone.dashboard.model.CheckMarx;
 import com.capitalone.dashboard.model.CheckMarxType;
 import com.capitalone.dashboard.model.DataResponse;
@@ -25,11 +24,6 @@ public class CheckMarxController
     @Autowired
     public CheckMarxController(CheckMarxServiceImpl checkMarxService) {
         this.checkMarxService = checkMarxService;
-    }
-
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        binder.registerCustomEditor(CheckMarxType.class, new CaseInsensitiveCheckMarxTypeEditor());
     }
 
     @RequestMapping(value = "/checkmarx", method = GET, produces = APPLICATION_JSON_VALUE)
