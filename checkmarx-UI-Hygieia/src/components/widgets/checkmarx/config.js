@@ -11,7 +11,6 @@
         let ctrl = this;
         let widgetConfig = modalData.widgetConfig;
         let component = modalData.dashboard.application.components[0];
-        console.log(modalData);
 
         ctrl.csToolsDropdownPlaceholder = 'Loading Security Analysis Jobs...';
 
@@ -27,6 +26,14 @@
         loadSavedCheckMarxJob();
         collectorData.itemsByType('CheckMarx').then(processCheckMarxResponse);
 
+        function getProjectWithTheCurrentProjectField(response) {
+            let projects = response;
+            for (let i = 0; i < projects.length; ++i) {
+                projects[i].options.current = projects[i].options.current ? "(Current)" : "";
+            }
+            return projects;
+        }
+
         function loadSavedCheckMarxJob() {
             let checkMarxCollectorItems = component.collectorItems.CheckMarx;
             const savedCheckMarxJob = checkMarxCollectorItems ? checkMarxCollectorItems[0].description : null;
@@ -37,14 +44,6 @@
 
         function getCheckMarxCollectorsCallback(data) {
             ctrl.checkMarxCollectorItem = data[0];
-        }
-
-        function getProjectWithTheCurrentProjectField(response) {
-            let projects = response;
-            for (let i = 0; i < projects.length; ++i) {
-                projects[i].options.current = projects[i].options.current ? "(Current)" : "";
-            }
-            return projects;
         }
 
         function processCheckMarxResponse(data) {
