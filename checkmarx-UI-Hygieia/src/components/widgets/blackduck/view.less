@@ -2,29 +2,44 @@
 @import (reference) '../../../app/css/mixins.less';
 
 .blackduck_view {
-  .project_name {
+  .project-name {
     font-size: 24px;
+    color: #cececf;
   }
-
-  .summary_count {
+  .total-issues {
+    font-size: 18px;
+  }
+  .summary-count {
     border-bottom: 2px solid @dash-divider;
     font-size: 4rem;
     min-height: 3.1em;
     margin-bottom: 0.5rem;
     text-align: center;
   }
-  .summary_type {
+  .summary-count-block {
+    width: 100%;
+  }
+  .difference-block-color {
+    color: #cececf;
+  }
+  .difference-count {
+    font-size: 2rem;
+  }
+  .difference-block {
+    display: none;
+  }
+  .summary-type {
     .text-standard;
     text-align: center;
     white-space: normal;
   }
-  .lol {
+  .vertical-align {
     line-height: 3em;
   }
-  .number_files {
+  .number-files {
     color: @dash-status-info;
   }
-  .number_violations {
+  .number-violations {
     color: @dash-status-warn;
   }
 }

@@ -7,11 +7,11 @@
 
             <form-group input="apCollectorItem" class="text-center">
 
-                <div class="text-center modal-label">AppScan results: </div>
+                <div class="text-center modal-label ">AppScan results: </div>
 
                 <input type="text" name="appScanCollectorItem" class="form-control" placeholder="Search a AppScan Job"
                        ng-model="appScanWidget.appScanCollectorItem"
-                       uib-typeahead="item as item.description for item in getAppScanCollectors($viewValue)" typeahead-focus
+                       uib-typeahead="item as (item.description  + ':' + item.options.projectDate + item.options.current)  for item in getAppScanCollectors($viewValue)" typeahead-focus
                        typeahead-template-url="appScanProjectUrlTemplate.html"
                        typeahead-wait-ms="250" autocomplete="off"
                        typeahead-min-length="0"
@@ -21,7 +21,7 @@
                 <div class="form-control" ng-show="noResults">
                     No Results Found
                 </div>
-                <div class="form group text-center">
+                <div class="form group text-center top_offset info-icon-label">
                     <label></label>
                     <button type="submit" class="btn btn-primary btn-wide">Save</button>
                 </div>

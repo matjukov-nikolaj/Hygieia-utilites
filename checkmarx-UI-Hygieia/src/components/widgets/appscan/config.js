@@ -20,7 +20,7 @@
 
         $scope.getAppScanCollectors = function(filter){
             return collectorData.itemsByType('AppScan', {"search": filter, "size": 20}).then(function (response){
-                return response;
+                return getProjectWithTheCurrentProjectField(response);
             });
         };
 
@@ -32,6 +32,14 @@
             if(savedAppScanJob){
                 $scope.getAppScanCollectors(savedAppScanJob).then(getAppScanCollectorsCallback) ;
             }
+        }
+
+        function getProjectWithTheCurrentProjectField(response) {
+            let projects = response;
+            for (let i = 0; i < projects.length; ++i) {
+                projects[i].options.current = projects[i].options.current ? "(Current)" : "";
+            }
+            return projects;
         }
 
         function getAppScanCollectorsCallback(data) {

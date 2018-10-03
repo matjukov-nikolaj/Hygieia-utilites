@@ -2,30 +2,53 @@
     <!-- Scrum Widget -->
     <div class="widget">
         <div class="widget-body">
-            <div class="col-xs-9.5 text-standard-sm dash-overflow project_name">
-                Project: <em>{{blackDuckWidget.projectName}}</em>
+            <div class="col-xs-9.5 text-standard-sm dash-overflow project-name">
+                <a class="project-name" href={{blackDuckWidget.reportUrl}}>
+                    Project: <em>{{blackDuckWidget.projectName}}</em>
+                </a>
+            </div>
+            <div class="col-xs-9.5 text-standard-sm dash-overflow total-issues">
+                Date: <em>{{ blackDuckWidget.date }}</em>
+            </div>
+            <div id="blackDuckDifferenceBlock" class="col-xs-9.5 text-standard-sm dash-overflow total-issues">
+                <div id="differenceFilesWithViolationsBlock" class="difference-count">
+                    <span class="difference-block-color">Files with violations:</span>
+                    <span>{{blackDuckWidget.differenceFilesWithViolations + " (" + blackDuckWidget.percentages + "%)"}}</span>
+                    <span id="blackDuckFilesWithViolationsValuesUp" class="fa fa-arrow-up difference-block"></span>
+                    <span id="blackDuckFilesWithViolationsValuesDown" class="fa fa-arrow-down difference-block"></span>
+                </div>
             </div>
         </div>
 
         <div class="widget-body" fit-text=".build-summary-count > span" fit-text-max="40">
             <div class="row">
                 <div class="col-xs-4">
-                    <div class="summary_count number_files lol">
-                            <span>{{blackDuckWidget.metrics["Number of Files:"]}}</span>
+                    <div class="summary-count number-files vertical-align">
+                        <span>{{blackDuckWidget.first}}</span>
                     </div>
-                    <div class="summary_type">Number of files</div>
+                    <div class="summary-type">Number of files</div>
                 </div>
                 <div class="col-xs-4">
-                    <div class="summary_count number_files">
-                        <span>{{blackDuckWidget.metrics["Files Pending Identification:"]}}</span>
+                    <div class="summary-count number-files summary-count-block">
+                        <div class="summary-count-block">
+                            <span>{{blackDuckWidget.second}}</span>
+                        </div>
+                        <div class="summary-count-block">
+                            <span>{{blackDuckWidget.percentagesSecond}}</span>
+                        </div>
                     </div>
-                    <div class="summary_type">Files Pending Identification</div>
+                    <div class="summary-type">Files Pending Identification</div>
                 </div>
                 <div class="col-xs-4">
-                    <div class="summary_count number_violations">
-                        <span>{{blackDuckWidget.metrics["Files with Violations:"]}}</span>
+                    <div class="summary-count number-violations summary-count-block">
+                        <div class="summary-count-block">
+                            <span>{{blackDuckWidget.third}}</span>
+                        </div>
+                        <div class="summary-count-block">
+                            <span>{{blackDuckWidget.percentagesThird}}</span>
+                        </div>
                     </div>
-                    <div class="summary_type">Files with Violations</div>
+                    <div class="summary-type">Files with Violations</div>
                 </div>
             </div>
         </div>

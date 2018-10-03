@@ -11,7 +11,7 @@
 
                 <input type="text" name="blackDuckCollectorItem" class="form-control" placeholder="Search a BlackDuck Job"
                        ng-model="blackDuckWidget.blackDuckCollectorItem"
-                       uib-typeahead="item as item.description for item in getBlackDuckCollectors($viewValue)" typeahead-focus
+                       uib-typeahead="item as (item.description  + ':' + item.options.projectDate + item.options.current) for item in getBlackDuckCollectors($viewValue)" typeahead-focus
                        typeahead-template-url="blackDuckProjectUrlTemplate.html"
                        typeahead-wait-ms="250" autocomplete="off"
                        typeahead-min-length="0"
@@ -21,7 +21,7 @@
                 <div class="form-control" ng-show="noResults">
                     No Results Found
                 </div>
-                <div class="form group text-center">
+                <div class="form group text-center info-icon-label">
                     <label></label>
                     <button type="submit" class="btn btn-primary btn-wide">Save</button>
                 </div>

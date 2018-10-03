@@ -20,9 +20,17 @@
 
         $scope.getBlackDuckCollectors = function(filter){
             return collectorData.itemsByType('BlackDuck', {"search": filter, "size": 20}).then(function (response){
-                return response;
+                return getProjectWithTheCurrentProjectField(response);
             });
         };
+
+        function getProjectWithTheCurrentProjectField(response) {
+            let projects = response;
+            for (let i = 0; i < projects.length; ++i) {
+                projects[i].options.current = projects[i].options.current ? "(Current)" : "";
+            }
+            return projects;
+        }
 
         loadSavedBlackDuckJob();
         collectorData.itemsByType('BlackDuck').then(processBlackDuckResponse);

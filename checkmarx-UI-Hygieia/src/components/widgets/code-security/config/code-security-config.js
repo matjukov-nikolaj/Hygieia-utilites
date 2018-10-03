@@ -1,0 +1,31 @@
+const config = {
+    checkMarx: {
+        COLLECTOR: "checkMarx",
+        LOW: "Low",
+        MEDIUM: "Medium",
+        HIGH: "High",
+    },
+    appScan: {
+        COLLECTOR: "appScan",
+        LOW: "low",
+        MEDIUM: "medium",
+        HIGH: "high",
+    },
+    blackDuck: {
+        COLLECTOR: "blackDuck",
+        NUMBER_OF_FILES: "Number of Files:",
+        FILES_WITH_VIOLATIONS: "Files with Violations:",
+        FILES_PENDING_IDENTIFICATION: "Files Pending Identification:",
+    },
+    EMPTY_URL: "javascript:void(0)",
+    BLOCK: "block",
+    NONE: "none",
+    INLINE_BLOCK: "inline-block",
+    VALUES_DOWN: "ValuesDown",
+    VALUES_UP: "ValuesUp",
+    VALUES_BLOCK: "ValuesBlock",
+    GREEN_COLOR: "#5cb85c",
+    RED_COLOR: "#d9534f",
+    YELLOW_COLOR: "#ffff00",
+    DIFFERENCE: "difference",
+};

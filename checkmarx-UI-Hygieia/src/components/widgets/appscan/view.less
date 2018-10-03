@@ -4,14 +4,21 @@
 .appscan-view {
   .project-name {
     font-size: 24px;
+    color: #cececf;
   }
   .total-issues {
     font-size: 18px;
   }
-  .summary-count {
+  .summary-border {
     border-bottom: 2px solid @dash-divider;
+  }
+  .summary-count {
     font-size: 4rem;
     margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .difference-count {
+    font-size: 2rem;
     text-align: center;
   }
   .summary-type {
@@ -26,5 +33,8 @@
   }
   .number_high {
     color: @dash-status-fail;
+  }
+  .difference-block {
+    display: none;
   }
 }
